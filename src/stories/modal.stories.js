@@ -20,7 +20,7 @@ stories.add("App", () => {
           <button onClick = {() => setActive(true)}>Save</button>
           <Modal
             open = {active}
-            content = "React modal is open !"
+            modalContent = "Yeah ! The react modal is open !"
             close = {close}
           />
         </div>
