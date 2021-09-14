@@ -1,0 +1,36 @@
+{
+  "name": "rs-react-modal",
+  "version": "1.0.0",
+  "description": "A simple react modal",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remisany/rs-react-modal.git"
+  },
+  "author": "Rémi Sany",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/remisany/rs-react-modal/issues"
+  },
+  "homepage": "https://github.com/remisany/rs-react-modal#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/react": "^6.3.8",
+    "babel-loader": "^8.2.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
