@@ -2,10 +2,10 @@
 
 ## Modal window pluggin for [project 14 : Pass a jQuery library to React](https://github.com/remisany/RemiSany_14_08092021)
 
-A simple react modal (conversion of the [jquery modal](https://github.com/kylefox/jquery-modal)
+A simple react modal (conversion of the [jquery modal](https://github.com/kylefox/jquery-modal))
 
 1. [Installation](#Installation)
-2. [Example of use](#Example)
+2. [Examples of use](#Example)
 3. [Default option](#Default)
 
 <div id='Installation'>
@@ -20,14 +20,14 @@ For import rs-react-modal:
 
 <div id='Example'>
 
-## Example of use
+## Examples of use
 
 ### Example 1: by default
 
 ```js
 <Modal
-    open = {active}
     close = {close}
+    open = {active}
 />
 ```
 
@@ -41,10 +41,10 @@ const customButton = {
 }
 
 <Modal
-    open = {active}
-    escape = {false}
-    outside = {false}
     close = {close}
+    escape = {false}
+    open = {active}
+    outside = {false}
     showClose = {true}
     styleButton = {customButton}
 />
@@ -73,8 +73,10 @@ const customButton = {
 }
 
 <Modal
-    open = {active}
+    buttonContent = "Example button"
     close = {close}
+    modalContent = "Example 3"
+    open = {active}
     styleButton = {customButton}
     styleContent = {customContent}
 />
@@ -85,6 +87,8 @@ const customButton = {
 <div id='Default'>
 
 ## Default option
+
+### Default content
 
 ```js
 Modal.defaultProps = {
@@ -102,6 +106,8 @@ Modal.defaultProps = {
   styleContent: {} // To customize modal content style
 }
 ```
+
+### Default type
 
 ```js
 Modal.propTypes = {
