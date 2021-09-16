@@ -11,7 +11,7 @@
     />
 ```
 
-![Alt text](/example/By_default.PNGraw=true) 
+![Alt text](/example/By_default.PNG) 
 
 ## Default option
 
