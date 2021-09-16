@@ -69,6 +69,24 @@ const BUTTONX = styled.button`
   ${(props) => props.customStyle}
 `
 
+/**
+* @param {object} props - Props
+* @param {string} buttonContent - To customize the button content
+* @param {function} close - Action when closing
+* @param {boolean} escape - To close the modal by pressing `ESC`
+* @param {number} fadeDelay - Point during the overlay's fade-in that the modal begins to fade in (number between 0 and 1)
+* @param {number} fadeDuration - Number of milliseconds the fade transition takes (null means no transition)
+* @param {string} modalContent - To customize the modal content
+* @param {boolean} open - To open the modal
+* @param {boolean} outside - To close the modal by clicking the overlay
+* @param {boolean} showClose - To activate button x
+* @param {object} styleButton - To customize button style
+* @param {object} styleButtonX - To customize button x style
+* @param {object} styleContainer - To customize overlay style
+* @param {object} styleContent - To customize modal content style
+* @returns {component} - Modal
+*/
+
 function Modal ({buttonContent, close, escape, fadeDelay, fadeDuration, modalContent, open, outside, showClose, styleButton, styleButtonX, styleContainer, styleContent}) {
   if (!open) {
     return null
