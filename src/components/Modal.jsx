@@ -2,14 +2,11 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
-const opacityContainer = (fadeDelay) => keyframes`
-  0% {
+const opacity = keyframes`
+  from {
     opacity: 0
   }
-  ${fadeDelay}% {
-    opacity: 1
-  }
-  100% {
+  to {
     opacity: 1
   }
 `
@@ -22,7 +19,7 @@ const CONTAINER = styled.div`
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
-  animation: ${props => opacityContainer(props.fadeDelay)} ${props => props.fadeDuration}ms both;
+  animation: ${opacity} ${props => props.fadeDuration}ms both;
   ${(props) => props.customStyle}
 `
 
@@ -37,6 +34,7 @@ const CONTENT = styled.div`
   padding: 15px;
   align-items: center;
   border-radius: 5px;
+  animation: ${opacity} ${props => props.fadeDuration}ms ${props => props.fadeDelay}ms both;
   ${(props) => props.customStyle}
 `
 
@@ -96,11 +94,12 @@ function Modal ({buttonContent, close, escape, fadeDelay, fadeDuration, modalCon
       id = "container"
       onClick = {(e) => outsideModal(e)}
       customStyle = {styleContainer}
-      fadeDelay = {fadeDelay}
       fadeDuration = {fadeDuration}
     >
       <CONTENT
         id = "content"
+        fadeDuration = {fadeDuration-fadeDuration*fadeDelay}
+        fadeDelay = {fadeDelay*fadeDuration}
         customStyle = {styleContent}
       >
         {modalContent}
@@ -120,6 +119,8 @@ Modal.propTypes = {
   buttonContent: PropTypes.string,
   close: PropTypes.func.isRequired,
   escape: PropTypes.bool,
+  fadeDelay: PropTypes.number,
+  fadeDuration: PropTypes.number,
   modalContent: PropTypes.string,
   open: PropTypes.bool.isRequired,
   outside: PropTypes.bool,
@@ -133,8 +134,8 @@ Modal.propTypes = {
 Modal.defaultProps = {
   buttonContent: "Close",
   escape: true,
-  fadeDelay: 5,
-  fadeDuration: 1000,
+  fadeDelay: null,
+  fadeDuration: null,
   modalContent: "React modal is open!",
   open: false,
   outside: true,
