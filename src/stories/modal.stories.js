@@ -20,8 +20,8 @@ stories.add("Ex1", () => {
           <h2>By default</h2>
           <button onClick = {() => setActive(true)}>Open</button>
           <Modal
-              open = {active}
               close = {close}
+              open = {active}
           />
         </div>
       </Fragment>
@@ -46,10 +46,10 @@ stories.add("Ex2", () => {
         <h2>With close button only (showClose = true)</h2>
         <button onClick = {() => setActive(true)}>Open</button>
         <Modal
-            open = {active}
-            escape = {false}
-            outside = {false}
             close = {close}
+            escape = {false}
+            open = {active}
+            outside = {false}
             showClose = {true}
             styleButton = {customButton}
         />
@@ -89,8 +89,10 @@ stories.add("Ex3", () => {
         <h2>Modal customized</h2>
         <button onClick = {() => setActive(true)}>Open</button>
         <Modal
-            open = {active}
+            buttonContent = "Example button"
             close = {close}
+            modalContent = "Example 3"
+            open = {active}
             styleButton = {customButton}
             styleContent = {customContent}
         />
