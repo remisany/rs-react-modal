@@ -1,17 +1,88 @@
 # rs-react-modal
 
+## Modal window pluggin for [project 14 : Pass a jQuery library to React](https://github.com/remisany/RemiSany_14_08092021)
+
+A simple react modal (conversion of the [jquery modal](https://github.com/kylefox/jquery-modal)
+
+1. [Installation](#Installation)
+2. [Example of use](#Example)
+3. [Default option](#Default)
+
+<div id='Installation'>
+
+## Installation
+
+You can install rs-react-modal with npm:
+`npm i rs-react-modal`
+
+For import rs-react-modal:
+`import {Modal} from "rs-react-modal"`
+
+<div id='Example'>
+
 ## Example of use
 
 ### Example 1: by default
 
 ```js
-    <Modal
-        open = {active}
-        close = {close}
-    />
+<Modal
+    open = {active}
+    close = {close}
+/>
 ```
 
-![Alt text](/example/By_default.PNG) 
+![Alt text](/example/By_default.PNG)
+
+### Example 2: with close button only (showClose = true)
+
+```js
+const customButton = {
+    display: "none"
+}
+
+<Modal
+    open = {active}
+    escape = {false}
+    outside = {false}
+    close = {close}
+    showClose = {true}
+    styleButton = {customButton}
+/>
+```
+
+![Alt text](/example/showClose_true.PNG) 
+
+### Example 3: customized
+
+```js
+const customContent = {
+    background: "#594B94",
+    color: "#FFF",
+    borderRadius: "0"
+}
+
+const customButton = {
+    fontSize: "1rem",
+    cursor: "pointer",
+    fontWeight: "bold",
+    background: "#F04329",
+    borderColor: "#F04329",
+    width: "12rem",
+    padding: "1rem",
+    borderRadius: ".3rem"
+}
+
+<Modal
+    open = {active}
+    close = {close}
+    styleButton = {customButton}
+    styleContent = {customContent}
+/>
+```
+
+![Alt text](/example/Customized.PNG) 
+
+<div id='Default'>
 
 ## Default option
 
