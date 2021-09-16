@@ -88,30 +88,30 @@ const customButton = {
 
 ```js
 Modal.defaultProps = {
-  buttonContent: "Close", // Allows the user to customize the button content
-  escape: true, //Allows the user to close the modal by pressing `ESC`
-  fadeDelay: null, //Point during the overlay's fade-in that the modal begins to fade in (number between 0 and 1)
+  buttonContent: "Close", // To customize the button content
+  escape: true, // To close the modal by pressing `ESC`
+  fadeDelay: null, // Point during the overlay's fade-in that the modal begins to fade in (number between 0 and 1)
   fadeDuration: null, // Number of milliseconds the fade transition takes (null means no transition)
-  modalContent: "React modal is open!", // Allows the user to customize the modal content
-  open: false, // Allows the user to open the modal
-  outside: true, // Allows the user to close the modal by clicking the overlay
-  showClose: false, // Allows the user to activate button x
-  styleButton: {}, // Allows the user to customize button style
-  styleButtonX: {}, // Allows the user to customize button x style
-  styleContainer: {}, // Allows the user to customize overlay style
-  styleContent: {} // Allows the user to customize modal content style
+  modalContent: "React modal is open!", // To customize the modal content
+  open: false, // To open the modal
+  outside: true, // To close the modal by clicking the overlay
+  showClose: false, // To activate button x
+  styleButton: {}, // To customize button style
+  styleButtonX: {}, // To customize button x style
+  styleContainer: {}, // To customize overlay style
+  styleContent: {} // To customize modal content style
 }
 ```
 
 ```js
 Modal.propTypes = {
   buttonContent: PropTypes.string,
-  close: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired, // REQUIRED - Action when closing
   escape: PropTypes.bool,
   fadeDelay: PropTypes.number,
   fadeDuration: PropTypes.number,
   modalContent: PropTypes.string,
-  open: PropTypes.bool.isRequired,
+  open: PropTypes.bool.isRequired, // REQUIRED - TRUE to open the modal
   outside: PropTypes.bool,
   showClose: PropTypes.bool,
   styleButton: PropTypes.object,
@@ -120,4 +120,3 @@ Modal.propTypes = {
   styleContent: PropTypes.object
 }
 ```
-
