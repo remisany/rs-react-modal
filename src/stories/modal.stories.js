@@ -57,3 +57,48 @@ stories.add("Ex2", () => {
     </Fragment>
   )
 });
+
+stories.add("Ex3", () => {
+  const [active, setActive] = useState(false)
+
+  const close = () => {
+    setActive(!active)
+  }
+
+  const customContent = {
+    background: "#594B94",
+    color: "#FFF",
+    borderRadius: "0"
+  }
+
+  const customButton = {
+    fontSize: "1rem",
+    cursor: "pointer",
+    fontWeight: "bold",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#F04329",
+    borderColor: "#F04329",
+    width: "12rem",
+    padding: "1rem",
+    borderRadius: ".3rem"
+  }
+
+  return (
+    <Fragment>
+      <div className = "container">
+        <h1>React Modal</h1>
+        <h2>Modal customized</h2>
+        <button onClick = {() => setActive(true)}>Open</button>
+        <Modal
+            open = {active}
+            close = {close}
+            styleButton = {customButton}
+            styleContent = {customContent}
+        />
+      </div>
+    </Fragment>
+
+  )
+});
