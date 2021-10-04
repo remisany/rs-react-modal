@@ -1,26 +1,11 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var React = require('react');
-var PropTypes = require('prop-types');
-var styled = require('styled-components');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
-var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
-
-const opacity = styled.keyframes`
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react"),t=require("prop-types"),o=require("styled-components");function n(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var a=n(e),l=n(t),i=n(o);const d=o.keyframes`
   from {
     opacity: 0
   }
   to {
     opacity: 1
   }
-`;
-const CONTAINER = styled__default['default'].div`
+`,u=i.default.div`
   position: fixed;
   z-index: 1;
   top: 0;
@@ -28,10 +13,9 @@ const CONTAINER = styled__default['default'].div`
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
-  animation: ${opacity} ${props => props.fadeDuration}ms both;
-  ${props => props.customStyle}
-`;
-const CONTENT = styled__default['default'].div`
+  animation: ${d} ${e=>e.fadeDuration}ms both;
+  ${e=>e.customStyle}
+`,r=i.default.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -42,10 +26,9 @@ const CONTENT = styled__default['default'].div`
   padding: 15px;
   align-items: center;
   border-radius: 5px;
-  animation: ${opacity} ${props => props.fadeDuration}ms ${props => props.fadeDelay}ms both;
-  ${props => props.customStyle}
-`;
-const BUTTON = styled__default['default'].button`
+  animation: ${d} ${e=>e.fadeDuration}ms ${e=>e.fadeDelay}ms both;
+  ${e=>e.customStyle}
+`,s=i.default.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,9 +37,8 @@ const BUTTON = styled__default['default'].button`
   width: 100px;
   padding: 5px;
   border-radius: 5px;
-  ${props => props.customStyle}
-`;
-const BUTTONX = styled__default['default'].button`
+  ${e=>e.customStyle}
+`,f=i.default.button`
   position: absolute;
   top: -15px;
   right: -15px;
@@ -72,107 +54,5 @@ const BUTTONX = styled__default['default'].button`
   width: 30px;
   height: 30px;
   border-radius: 300px;
-  ${props => props.customStyle}
-`;
-/**
-* @param {object} props - Props
-* @param {string} buttonContent - To customize the button content
-* @param {function} close - Action when closing
-* @param {boolean} escape - To close the modal by pressing `ESC`
-* @param {number} fadeDelay - Point during the overlay's fade-in that the modal begins to fade in (number between 0 and 1)
-* @param {number} fadeDuration - Number of milliseconds the fade transition takes (null means no transition)
-* @param {string} modalContent - To customize the modal content
-* @param {boolean} open - To open the modal
-* @param {boolean} outside - To close the modal by clicking the overlay
-* @param {boolean} showClose - To activate button x
-* @param {object} styleButton - To customize button style
-* @param {object} styleButtonX - To customize button x style
-* @param {object} styleContainer - To customize overlay style
-* @param {object} styleContent - To customize modal content style
-* @returns {component} - Modal
-*/
-
-function Modal({
-  buttonContent,
-  close,
-  escape,
-  fadeDelay,
-  fadeDuration,
-  modalContent,
-  open,
-  outside,
-  showClose,
-  styleButton,
-  styleButtonX,
-  styleContainer,
-  styleContent
-}) {
-  if (!open) {
-    return null;
-  }
-
-  React.useEffect(() => {
-    if (open && escape) {
-      window.addEventListener("keydown", e => {
-        if (e.key === "Escape") {
-          close();
-          window.removeEventListener("keydown", close());
-        }
-      });
-    }
-  }, [open]);
-
-  const outsideModal = e => {
-    outside && e.target.id === "container" && close();
-  };
-
-  return /*#__PURE__*/React__default['default'].createElement(CONTAINER, {
-    id: "container",
-    onClick: e => outsideModal(e),
-    customStyle: styleContainer,
-    fadeDuration: fadeDuration
-  }, /*#__PURE__*/React__default['default'].createElement(CONTENT, {
-    id: "content",
-    fadeDuration: fadeDuration - fadeDuration * fadeDelay,
-    fadeDelay: fadeDelay * fadeDuration,
-    customStyle: styleContent
-  }, modalContent, /*#__PURE__*/React__default['default'].createElement(BUTTON, {
-    onClick: close,
-    customStyle: styleButton
-  }, buttonContent), showClose && /*#__PURE__*/React__default['default'].createElement(BUTTONX, {
-    onClick: close,
-    customStyle: styleButtonX
-  }, "x")));
-}
-
-Modal.propTypes = {
-  buttonContent: PropTypes__default['default'].string,
-  close: PropTypes__default['default'].func.isRequired,
-  escape: PropTypes__default['default'].bool,
-  fadeDelay: PropTypes__default['default'].number,
-  fadeDuration: PropTypes__default['default'].number,
-  modalContent: PropTypes__default['default'].string,
-  open: PropTypes__default['default'].bool.isRequired,
-  outside: PropTypes__default['default'].bool,
-  showClose: PropTypes__default['default'].bool,
-  styleButton: PropTypes__default['default'].object,
-  styleButtonX: PropTypes__default['default'].object,
-  styleContainer: PropTypes__default['default'].object,
-  styleContent: PropTypes__default['default'].object
-};
-Modal.defaultProps = {
-  buttonContent: "Close",
-  escape: true,
-  fadeDelay: null,
-  fadeDuration: null,
-  modalContent: "React modal is open!",
-  open: false,
-  outside: true,
-  showClose: false,
-  styleButton: {},
-  styleButtonX: {},
-  styleContainer: {},
-  styleContent: {}
-};
-
-exports.Modal = Modal;
+  ${e=>e.customStyle}
+`;function c({buttonContent:t,close:o,escape:n,fadeDelay:l,fadeDuration:i,modalContent:d,open:c,outside:p,showClose:y,styleButton:m,styleButtonX:b,styleContainer:x,styleContent:g}){if(!c)return null;e.useEffect((()=>{c&&n&&window.addEventListener("keydown",(e=>{"Escape"===e.key&&(o(),window.removeEventListener("keydown",o()))}))}),[c]);return a.default.createElement(u,{id:"container",onClick:e=>(e=>{p&&"container"===e.target.id&&o()})(e),customStyle:x,fadeDuration:i},a.default.createElement(r,{id:"content",fadeDuration:i-i*l,fadeDelay:l*i,customStyle:g},d,a.default.createElement(s,{onClick:o,customStyle:m},t),y&&a.default.createElement(f,{onClick:o,customStyle:b},"x")))}c.propTypes={buttonContent:l.default.string,close:l.default.func.isRequired,escape:l.default.bool,fadeDelay:l.default.number,fadeDuration:l.default.number,modalContent:l.default.string,open:l.default.bool.isRequired,outside:l.default.bool,showClose:l.default.bool,styleButton:l.default.object,styleButtonX:l.default.object,styleContainer:l.default.object,styleContent:l.default.object},c.defaultProps={buttonContent:"Close",escape:!0,fadeDelay:null,fadeDuration:null,modalContent:"React modal is open!",open:!1,outside:!0,showClose:!1,styleButton:{},styleButtonX:{},styleContainer:{},styleContent:{}},exports.Modal=c;
