@@ -4,6 +4,8 @@
 
 A simple react modal (conversion of the [jquery modal](https://github.com/kylefox/jquery-modal))
 
+[Npm library link](https://www.npmjs.com/package/rs-react-modal)
+
 1. [Installation](#Installation)
 2. [Examples of use](#Example)
 3. [Default option](#Default)
